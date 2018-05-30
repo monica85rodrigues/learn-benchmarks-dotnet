@@ -7,7 +7,7 @@
     public class CompareSwitchAndDictionaryBenchmark
     {
         [Benchmark]
-        public void SwitchVersion()
+        public string SwitchVersion()
         {
             var jobType = "Junior";
             var value = string.Empty;
@@ -27,10 +27,12 @@
                     value = "I'm a principal developer";
                     break;
             }
+
+            return value;
         }
 
         [Benchmark]
-        static void DictionaryVersion()
+        static string DictionaryVersion()
         {
             var dictionary = new Dictionary<string, string>()
             {
@@ -40,7 +42,7 @@
                 { "Principal", "I'm a principal developer" },
             };
 
-            var value = dictionary["Junior"];
+            return dictionary["Junior"];
         }
     }
 }

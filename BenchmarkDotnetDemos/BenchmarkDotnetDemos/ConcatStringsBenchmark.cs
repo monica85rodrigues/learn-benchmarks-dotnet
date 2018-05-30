@@ -7,22 +7,24 @@
     public class ConcatStringsBenchmark
     {
         [Benchmark]
-        public void ConcatStringsWithPlusOperator()
+        public string ConcatStringsWithPlusOperator()
         {
             var result = "a";
             for (int i = 0; i < 10; i++)
                 result += "a";
+
+            return result;
         }
 
         [Benchmark]
-        public void ConcatStringsWithStringBuilder()
+        public string ConcatStringsWithStringBuilder()
         {
             var builder = new StringBuilder("a");
 
             for (int i = 0; i < 10; i++)
                 builder.Append("a");
 
-            var result = builder.ToString();
+            return builder.ToString();
         }
     }
 }

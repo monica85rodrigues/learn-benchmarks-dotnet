@@ -7,21 +7,21 @@
     public class CompareStringsBenchmark
     {
         [Benchmark]
-        public void CompareStringsWithEqualsOperator()
+        public bool CompareStringsWithEqualsOperator()
         {
-            var result = "xpto".ToLower() == "XPTO".ToLower();
+            return "xpto".ToLower() == "XPTO".ToLower();
         }
 
         [Benchmark]
-        public void CompareStringsWithCompareMethod()
+        public bool CompareStringsWithCompareMethod()
         {
-            var result = string.Compare("xpto", "XPTO") == 0;
+            return string.Compare("xpto", "XPTO") == 0;
         }
 
         [Benchmark]
-        public void CompareStringsWithEqualsMethod()
+        public bool CompareStringsWithEqualsMethod()
         {
-            var result = "xpto".Equals("XPTO", StringComparison.CurrentCultureIgnoreCase);
+            return "xpto".Equals("XPTO", StringComparison.CurrentCultureIgnoreCase);
         }
     }
 }
