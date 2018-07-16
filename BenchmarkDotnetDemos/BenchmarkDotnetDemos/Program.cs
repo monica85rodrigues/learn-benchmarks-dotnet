@@ -15,7 +15,8 @@
                 typeof(CompareStringsBenchmark),
                 typeof(CompareSwitchAndDictionaryBenchmark),
                 typeof(ConcatStringsBenchmark),
-                typeof(SumArraysBenchmark)
+                typeof(SumArraysBenchmark),
+                typeof(DictionariesBenchmark)
             });
 
             benchmarkSwitcher.Run(args);
